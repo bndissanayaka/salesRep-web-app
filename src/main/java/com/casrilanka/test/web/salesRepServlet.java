@@ -1,13 +1,12 @@
 package com.casrilanka.test.web;
 
 import java.io.IOException;
-import java.sql.Date;
 import java.sql.SQLException;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
+//import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.casrilanka.test.dao.SalesRepDAO;
 import com.casrilanka.test.model.SalesRep;
 
+import jakarta.servlet.annotation.WebServlet;
 
 
 public class salesRepServlet {
@@ -39,7 +39,7 @@ public class salesRepServlet {
 			try {
 				switch (action) {
 				case "/new":
-					showNewForm(request, response);
+					showAddForm(request, response);
 					break;
 				case "/insert":
 					insertUser(request, response);
@@ -70,7 +70,7 @@ public class salesRepServlet {
 			dispatcher.forward(request, response);
 		}
 
-		private void showNewForm(HttpServletRequest request, HttpServletResponse response)
+		private void showAddForm(HttpServletRequest request, HttpServletResponse response)
 				throws ServletException, IOException {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("user-form.jsp");
 			dispatcher.forward(request, response);
@@ -92,8 +92,7 @@ public class salesRepServlet {
 			String name = request.getParameter("name");
 			String email = request.getParameter("email");
 			String contactNumber = request.getParameter("contactNumber");
-			//shud resolve
-			Date joinedDate = request.getParameter("joinedDate");
+			String joinedDate = request.getParameter("joinedDate");
 			String cuurentRoute = request.getParameter("cuurentRoute");
 			String comment = request.getParameter("comment");
 			
@@ -108,8 +107,7 @@ public class salesRepServlet {
 			String name = request.getParameter("name");
 			String email = request.getParameter("email");
 			String contactNumber = request.getParameter("contactNumber");
-			//shud resolve
-			Date joinedDate = request.getParameter("joinedDate");
+			String joinedDate = request.getParameter("joinedDate");
 			String cuurentRoute = request.getParameter("cuurentRoute");
 			String comment = request.getParameter("comment");
 

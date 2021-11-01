@@ -1,18 +1,17 @@
 package com.casrilanka.test.model;
 
-import java.sql.Date;
 
 public class SalesRep {
 	private int id;
 	private String name;
 	private String email;
 	private String contactNumber;
-	private Date joinedDate;
+	private String joinedDate;
 	private String cuurentRoute;
 	private String comment;
 	
 	
-	public SalesRep(String name, String email, String contactNumber, Date joinedDate, String cuurentRoute,
+	public SalesRep(String name, String email, String contactNumber, String joinedDate, String cuurentRoute,
 			String comment) {
 		super();
 		this.name = name;
@@ -23,14 +22,14 @@ public class SalesRep {
 		this.comment = comment;
 	}
 
-	public SalesRep(int id, String name, String email, String contactNumber, Date joinedDate, String cuurentRoute,
+	public SalesRep(int id, String name, String email, String contactNumber, String joinedDate2, String cuurentRoute,
 			String comment) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.contactNumber = contactNumber;
-		this.joinedDate = joinedDate;
+		this.joinedDate = joinedDate2;
 		this.cuurentRoute = cuurentRoute;
 		this.comment = comment;
 	}
@@ -59,10 +58,10 @@ public class SalesRep {
 	public void setContactNumber(String contactNumber) {
 		this.contactNumber = contactNumber;
 	}
-	public Date getJoinedDate() {
+	public String getJoinedDate() {
 		return joinedDate;
 	}
-	public void setJoinedDate(Date joinedDate) {
+	public void setJoinedDate(String joinedDate) {
 		this.joinedDate = joinedDate;
 	}
 	public String getCuurentRoute() {

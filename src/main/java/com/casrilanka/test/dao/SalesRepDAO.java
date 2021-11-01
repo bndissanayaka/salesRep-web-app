@@ -25,9 +25,6 @@ public class SalesRepDAO {
 	private static final String UPDATE_EMPLOYEE_SQL = "update salesrep_info set name = ?, email = ?, contact_num = ?,joined_date = ? ,current_route = ? ,comments = ? where id = ?;";
 	
 	
-	public SalesRepDAO() {
-		
-	}
 	
 	protected Connection getConnection() {
 		Connection connection = null;
@@ -51,7 +48,7 @@ public class SalesRepDAO {
 			preparedStatement.setString(1, salesRep.getName());
 			preparedStatement.setString(2, salesRep.getEmail());
 			preparedStatement.setString(3, salesRep.getContactNumber());
-			preparedStatement.setDate(4, salesRep.getJoinedDate());
+			preparedStatement.setString(4, salesRep.getJoinedDate());
 			preparedStatement.setString(5, salesRep.getCuurentRoute());
 			preparedStatement.setString(6, salesRep.getComment());
 			
@@ -77,7 +74,7 @@ public class SalesRepDAO {
 				String name = rs.getString("name");
 				String email = rs.getString("email");
 				String contactNumber = rs.getString("contactNumber");
-				Date joinedDate = rs.getDate("joinedDate");
+				String joinedDate = rs.getString("joinedDate");
 				String cuurentRoute = rs.getString("cuurentRoute");
 				String comment = rs.getString("comment");
 				
@@ -109,7 +106,7 @@ public class SalesRepDAO {
 				String name = rs.getString("name");
 				String email = rs.getString("email");
 				String contactNumber = rs.getString("contactNumber");
-				Date joinedDate = rs.getDate("joinedDate");
+				String joinedDate = rs.getString("joinedDate");
 				String cuurentRoute = rs.getString("cuurentRoute");
 				String comment = rs.getString("comment");
 				salesReps.add(new SalesRep(id, name, email, contactNumber, joinedDate, cuurentRoute, comment));
@@ -139,7 +136,7 @@ public class SalesRepDAO {
 			statement.setString(1, salesRep.getName());
 			statement.setString(2, salesRep.getEmail());
 			statement.setString(3, salesRep.getContactNumber());
-			statement.setDate(4, salesRep.getJoinedDate());
+			statement.setString(4, salesRep.getJoinedDate());
 			statement.setString(5, salesRep.getCuurentRoute());
 			statement.setString(6, salesRep.getComment());
 			statement.setInt(4, salesRep.getId());
